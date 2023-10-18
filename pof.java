@@ -2,25 +2,21 @@ import java.lang.*;
 import java.util.*;
 import java.io.*;
 class pof {
-	public boolean ipof(int n)
-	{
-		if (n != 0 && n == (int)Math.pow(4, (Math.log(n) / Math.log(4)))) {
-			return true;
-		}
-		return false;
-	}
-
-	public static void main(String[] args)
-	{
-		pof g = new pof();
+    public boolean isPowerOfFour(int num) {
+        if (num <= 0) {
+            return false;
+        }
+        while (num > 3) {
+            if (num % 4 != 0) {
+                return false;
+            }
+            num = num / 4;
+        }
+        return num == 1;
+    }
+	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
 		int num=sc.nextInt();
-		if (g.ipof(num)) {
-			System.out.print(num + " is a power of 4 ");
-		}
-		else {
-			System.out.print(num+ " is not a power of 4");
-		}
-	}
-}
+		
+}	}
 
